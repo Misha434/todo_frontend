@@ -6,7 +6,7 @@ type Data = {
   content: string;
   important: boolean;
   date: Date;
-}
+};
 
 function App() {
   const [data, setData] = useState<Data[]>([]);
@@ -29,17 +29,12 @@ function App() {
     <>
       <div>hello world</div>
       <div>List</div>
-      {data.length ? (
-        data.map((data) => (
-
-          <ul key={data.id}>
-            <li>{data.content}</li>
-            <li>{data.date}</li>
-          </ul>
-        ))
-      ) : (
-        <p>No item</p>
-      )}
+      {data.map((data) => (
+        <ul key={data.id}>
+          <li>{data.content}</li>
+          <li>{data.date}</li>
+        </ul>
+      ))}
     </>
   );
 }
