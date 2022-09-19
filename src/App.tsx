@@ -1,8 +1,15 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
+type Data = {
+  id: string;
+  content: string;
+  important: boolean;
+  date: Date;
+}
+
 function App() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<Data[]>([]);
   const getAll = () => {
     // const request = axios.get("http://localhost:3001/api/notes");
     const request = axios.get("https://todo-express-api-v0.fly.dev/");
