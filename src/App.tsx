@@ -12,7 +12,7 @@ function App() {
   const [data, setData] = useState<Data[]>([]);
   const getAll = () => {
     // const request = axios.get("http://localhost:3001/api/notes");
-    const request = axios.get("https://todo-express-api-v0.fly.dev/");
+    const request = axios.get("https://todo-express-api-v0.fly.dev/api/notes");
     return request.then((res) => res.data);
   };
 
@@ -30,10 +30,10 @@ function App() {
       <div>hello world</div>
       <div>List</div>
       {data.map((data) => (
-        <ul key={data.id}>
+        <div key={data.id}>
           <li>{data.content}</li>
           <li>{data.date}</li>
-        </ul>
+        </div>
       ))}
     </>
   );
