@@ -2,7 +2,9 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 function App() {
-  const [data, setData] = useState([{ id: "", content: "", date: new Date() }]);
+  const [data, setData] = useState([
+    { id: "", content: "", date: new Date(), important: false },
+  ]);
   const getAll = () => {
     // const request = axios.get('http://localhost:3001/api/notes');
     const request = axios.get("https://todo-express-api-v0.fly.dev/");
